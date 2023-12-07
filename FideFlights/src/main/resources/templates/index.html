@@ -1,15 +1,141 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>FideFlights - Tus vuelos de Confianza</title>        
     </head>
     <body>
-        <div>TODO write content</div>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- Alerta de cookies -->
+        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert"
+             style="text-align: center;">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <strong> Esta página usa Cookies 🍪 para su funcionamiento. </strong>
+            <button type="button" class="btn btn-success" data-bs-dismiss="alert" id="acceptButton">ACEPTAR</button>
+        </div>
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label=""></button>
+
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label=""></button>
+
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label=""></button>
+
+
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img th:src="@{/carousel/slide1.jpeg}" class="d-block w-100" alt="" height="350"/>
+                    <div class="carousel-caption d-none d-md-block"> 
+                        <h5 style="font-size: 30px; color: #000000">Brasil</h5>
+                        <p style="font-size: 38px; color: #1AD3E6">El destino recomendado es Rio de Janeiro</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img th:src="@{/carousel/slide2.jpeg}" class="d-block w-100" alt="" height="350"/>
+                    <div class="carousel-caption d-none d-md-block">
+                            <h5 style="font-size: 30px; color: #000000">Alemania</h5>
+                            <p style="font-size: 38px;  color: #1AD3E6" >Un lugar a visitar es la ciudad de Colonia</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img th:src="@{/carousel/slide3.jpeg}" class="d-block w-100" alt=""height="350"/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="font-size: 30px; color: #000000">Japón</h5>
+                        <p style="font-size: 38px;  color: #1AD3E6">Tokyo es el destino turístico recomendado de todas las personas amantes de la tecnologico y lo modernista</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Anterior -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <img th:src="@{/carousel/prev.png}" alt="Anterior">
+                    <span class="visually-hidden">Anterior</span>
+            </button>
+            <!-- Siguiente -->
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <img th:src="@{/carousel/next.png}" alt="Siguiente">
+                    <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        </header>
+
+        <div class="content-container">
+            <section>
+                <p style="color: white; font-weight: bold; font-size: 25px; background-color: #2069AD; margin-top: 0; text-align: center; border-bottom: 1px solid black">¡Bienvenido!</p>
+                <h2>Sobre nosotros</h2>
+                <p>Esta empresa se enfoca en el turismo y venta de pasasje aereo para visitar los distintos tipos turisticos que hay alrededor del mundo.</p>
+
+                <p2>Con FideFlights, usted como apasionado a los viajes, desde cualquier rincón del mundo podrá ver siempre los nuevos turismo y lugares de interés para seguir ampliando 
+                    su panorama del mundo, y seguir viajando con la comodidad que siempre ha tenido.</p2>
+
+            </section>
+
+            <aside class="text-center">
+                <!-- Contenido de la barra lateral izquierda -->
+                <p style="color: white; font-weight: bold; font-size: 25px; background-color: #2069AD; margin-top: 0; text-align: center; border-bottom: 1px solid black">Casos de Éxito</p>
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img th:src="@{/CasosExito/02.jpg}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img th:src="@{/CasosExito/04.jpg}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img th:src="@{/CasosExito/10.jpg}" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+                
+            </aside>
+        </div>
+
+        <style>
+            /* Estilos para el section */
+            section {
+                width: 73%; /* O el porcentaje que desees */
+                background-color: #cccccc; /* Color de fondo del section */
+                color: white; /* Color del texto del section */
+                padding: 20px; /* Espaciado interior del section */
+                color: #000000;
+                text-align: center;
+            }
+
+            /* Estilos para el aside */
+            aside {
+                width: 25%; /* O el porcentaje que desees */
+                background-color: #cccccc; /* Color de fondo del aside */
+                color: white; /* Color del texto del aside */
+                padding: 20px; /* Espaciado interior del aside */
+                color: #000000;
+                text-align: center;
+            }
+            .content-container {
+                display: flex;
+                justify-content: space-between; /* Alinea los elementos a los extremos */
+                padding: 20px; /* Espaciado interior del contenedor */
+            }
+        </style>
+
+
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>          
     </body>
 </html>
